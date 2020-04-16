@@ -1,0 +1,26 @@
+﻿@model PracticeProjectMVC.Models.Student
+    //It is for a single object 
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetStudentById</title>
+</head>
+<body>
+    <div> 
+        <h1>StudentId: @Model.StudentId</h1>
+        <h1>StudentName: @Model.StudentName</h1>
+        <p>StudentRollNumber: @Model.StudentRollNumber</p>
+        <p>StudentCourse: @Model.StudentCourse</p>
+        <p>StudentSemester: @Model.StudentSemester</p>
+        <p>StudentUniversity: @Model.StudentUniversity</p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@model List<PracticeProjectMVC.Models.Student> 
+    //It is working for the list of objects for the student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllStudents</title>
+    <style>
+    table{width: 75%; border:1px solid black;}
+    th{height:55%; border:1px solid black;}
+    tr:nth-of-type(2n+1){background-color: black; color: white;}
+    td{background-color: darkcyan; color: darkgray; border: 1px solid black; text-align:center;}
+
+
+    </style>
+</head>
+<body>
+    <div> 
+    <h1>The List of the Students</h1>
+        <table>
+
+        <tr>
+        <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Student RollNum</th>
+        <th>Student Course</th>
+        <th>Student Semester</th>
+        <th>Student University</th>
+        </tr>
+           @foreach(var student in Model)
+           {
+               <tr>
+
+                <td>@student.StudentId</td>
+                <td>@student.StudentName</td>
+                <td>@student.StudentRollNumber</td>
+                <td>@student.StudentCourse</td>
+                <td>@student.StudentSemester</td>
+                <td>@student.StudentUniversity</td>
+
+               </tr>
+           }
+
+        </table>
+    </div>
+</body>
+</html>
