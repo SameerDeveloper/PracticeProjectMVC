@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("GetProductById", "Product", FormMethod.Get))
+        {
+            <input type="number" name="ProductId" placeholder="Enter your Id" />
+
+            <input type="submit" value="GetById" />
+        }
+        @*<input type="number" name="ProductId" placeholder="Enter your Id" />
+
+        <input type="submit" value="GetById" />*@
+
+
+        
+    </div>
+</body>
+</html>

@@ -144,12 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Views\Product\Controllers\ProductController.cs" />
+    <Compile Include="Views\Product\Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CommonManager.cs" />
+    <Compile Include="Views\Product\CommonManager.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentContext.cs" />
@@ -166,6 +166,8 @@
     <Content Include="Views\Student\GetAllStudents.cshtml" />
     <Content Include="Views\Student\GetDBStudent.cshtml" />
     <Content Include="Views\Student\GetDBProduct.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\GetProductById.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,7 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

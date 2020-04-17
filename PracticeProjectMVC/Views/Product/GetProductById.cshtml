@@ -1,0 +1,41 @@
+﻿@model PracticeProjectMVC.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetProductById</title>
+</head>
+<body>
+    <div> 
+        <table>
+        <tr>
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>InStock</th>
+        <th>OnOrder</th>
+        <th>ReorderLevel</th>
+        <th>Discontinued</th>
+        </tr>
+         <tr>
+             <td>@Model.ProductID</td>
+             <td>@Model.ProductName</td>
+             <td>@Model.QuantityPerUnit</td>
+             <td>@Model.UnitPrice</td>
+             <td>@Model.UnitsInStock</td>
+             <td>@Model.UnitsOnOrder</td>
+             <td>@Model.ReorderLevel</td>
+             <td>@Model.Discontinued</td>
+            </tr>
+            </table>
+        <a href="/Product/Index">Return to Home</a>
+    </div>
+</body>
+</html>
