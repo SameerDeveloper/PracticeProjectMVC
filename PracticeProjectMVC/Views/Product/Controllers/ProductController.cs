@@ -18,6 +18,20 @@ namespace PracticeProjectMVC.Controllers
             CommonManager cm = new CommonManager();
             Product objProduct = cm.GetDBProduct(productid);
             return View(objProduct);
-        }    
+        }
+        public ActionResult GetAllStudent()
+        {
+            CommonManager cm = new CommonManager();
+            List<Product> list = cm.GetAllStudent();
+            return View(list);
+        }
     }
 }
+
+
+//public ActionResult GetAllStudents()
+//{
+//    StudentContext ctx = new StudentContext();
+//    List<Student> list = ctx.StudentList.ToList();
+//    return View(list);
+//}

@@ -71,9 +71,11 @@ namespace PracticeProjectMVC.Models
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "dbo.spProducts";
                 SqlParameter parame = new SqlParameter();
+                parame.ParameterName = "@Type";
+                parame.Value = 1;
                 parame.ParameterName = "@ProductID";
                 parame.Value = productid;
-                cmd.Parameters.Add(parame); //command parameter is taken inside
+                cmd.Parameters.Add(parame); 
 
                 DataTable ddt = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -102,6 +104,56 @@ namespace PracticeProjectMVC.Models
                 throw;
 
 
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+            public List<Product> GetAllStudent()
+        {
+            string _ConnectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString.ToString();
+            SqlConnection sqlConnection = new SqlConnection(_ConnectionString);
+
+            try  
+            {
+                sqlConnection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlConnection;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "dbo.spProducts";
+                SqlParameter parame = new SqlParameter();
+                parame.ParameterName = "@Type";
+                parame.Value = 2;
+                cmd.Parameters.Add(parame); 
+                List<Product> list = new List<Product>();
+                DataTable dtt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtt);
+
+                for (int i = 0; i < dtt.Rows.Count; i++)
+                {
+                    var raw = dtt.Rows[i];
+                    Product prot = new Product();
+                    prot.ProductID = Convert.ToInt32(dtt.Rows[i]["ProductID"]);
+                    prot.ProductName = raw["ProductName"].ToString();
+                    prot.SupplierID = Convert.ToInt32(dtt.Rows[i]["SupplierID"]);
+                    prot.CategoryID = Convert.ToInt32(dtt.Rows[i]["CategoryID"]);
+                    prot.QuantityPerUnit = raw["QuantityPerUnit"].ToString();
+                    prot.UnitPrice = Convert.ToDecimal(dtt.Rows[i]["UnitPrice"]);
+                    prot.UnitsInStock = Convert.ToInt32(dtt.Rows[i]["UnitsInStock"]);
+                    prot.UnitsOnOrder = Convert.ToInt32(dtt.Rows[i]["UnitsOnOrder"]);
+                    prot.ReorderLevel = Convert.ToInt32(dtt.Rows[i]["ReorderLevel"]);
+                    prot.Discontinued = Convert.ToInt32(dtt.Rows[i]["Discontinued"]);
+                    list.Add(prot);
+                }
+                return list;
+            }
+            catch (Exception)
+            {
+
+                return null;
+                throw;
             }
             finally
             {

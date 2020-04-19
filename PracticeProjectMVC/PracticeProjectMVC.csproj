@@ -168,6 +168,7 @@
     <Content Include="Views\Student\GetDBProduct.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\GetProductById.cshtml" />
+    <Content Include="Views\Product\GetAllStudent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

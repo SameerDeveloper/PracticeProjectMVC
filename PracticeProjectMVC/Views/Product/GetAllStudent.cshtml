@@ -1,0 +1,66 @@
+﻿@model List<PracticeProjectMVC.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllStudent</title>
+    <style>
+
+            table{width:85%; border: 1px solid black;}
+            th{height: 45%; vertical-align: bottom; background-color:antiquewhite; color: yellowgreen;}
+            tr:hover{background-color:antiquewhite; color:yellowgreen}
+            td{background-color: antiquewhite; color:yellowgreen; }
+
+
+    </style>
+</head>
+
+
+
+
+<body>
+    <div> 
+        <h1>List of the Products</h1>
+        <table>
+
+         <tr>
+         <th>Product ID</th>
+         <th>Product Name</th>
+          <th>SupplierId</th>
+          <th>CategoryId</th>
+         <th>Quantity</th>
+         <th>Price</th>
+         <th>In-Stock</th>
+         <th>On-Order</th>
+         <th>Reorder Level</th>
+         <th>Discontinued</th>
+         </tr>
+      @foreach (var product in Model)
+      {
+
+
+
+        <tr>
+        <td>@product.ProductID</td>
+        <td><b>@product.ProductName</b></td>
+        <td>@product.SupplierID</td>
+        <td>@product.CategoryID</td>
+        <td>@product.QuantityPerUnit</td>
+        <td>@product.UnitPrice</td>
+        <td>@product.UnitsInStock</td>
+        <td>@product.UnitsOnOrder</td>
+        <td>@product.ReorderLevel</td>
+        <td>@product.Discontinued</td>
+        </tr>
+      }
+        </table>
+      
+    </div>
+</body>
+</html>

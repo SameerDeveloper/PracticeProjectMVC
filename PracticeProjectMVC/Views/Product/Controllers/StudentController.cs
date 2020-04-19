@@ -59,6 +59,7 @@ namespace PracticeProjectMVC.Controllers
             Product objProduct = cm.DBOperation(id);
             return View(objProduct);
         }
+       
     }
     }
 
